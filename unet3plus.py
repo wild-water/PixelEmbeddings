@@ -3,6 +3,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from torch.nn import init
 
 
 
@@ -100,11 +101,11 @@ class unetConv2(nn.Module):
 
 
 class UNet3Plus(nn.Module):
-    def __init__(self, n_channels=3, n_classes=64, bilinear=True, feature_scale=4,
+    def __init__(self, n_channels=3, n_out_channels=64, bilinear=True, feature_scale=4,
                  is_deconv=True, is_batchnorm=True):
         super(UNet3Plus, self).__init__()
         self.n_channels = n_channels
-        self.n_classes = n_classes
+        self.n_classes =  n_out_channels
         self.bilinear = bilinear
         self.feature_scale = feature_scale
         self.is_deconv = is_deconv
