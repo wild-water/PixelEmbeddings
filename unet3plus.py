@@ -273,7 +273,7 @@ class UNet3Plus(nn.Module):
         self.relu1d_1 = nn.ReLU(inplace=True)
 
         # output
-        self.outconv1 = nn.Conv2d(self.UpChannels, n_classes, 3, padding=1)
+        self.outconv1 = nn.Conv2d(self.UpChannels, self.n_classes, 3, padding=1)
 
         # initialise weights
         for m in self.modules():
